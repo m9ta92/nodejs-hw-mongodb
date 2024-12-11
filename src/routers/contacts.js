@@ -1,4 +1,4 @@
-import { Router } from 'express'; // - функціонал Express Router
+import { Router } from 'express';
 import {
   getContactByIdController,
   getContactsController,
@@ -6,8 +6,6 @@ import {
 import { ctrlWrapper } from '../utils/ctrlWrapper.js';
 
 const contactsRouter = Router();
-
-//  замість app.get використовуємо створений contactsRouter.get
 
 contactsRouter.get('/', (req, res) => {
   res.json({
