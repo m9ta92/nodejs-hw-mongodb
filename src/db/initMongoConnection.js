@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+import mongoose from 'mongoose'; // це бібліотека для роботи з MongoDB у середовищі Node.js
 import { getEnvVar } from '../utils/getEnvVar.js';
 
 export const initMongoConnection = async () => {
