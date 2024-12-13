@@ -13,7 +13,7 @@ const contactsRouter = Router();
 
 contactsRouter.get('/', (req, res) => {
   res.json({
-    message: 'fuck this',
+    message: 'OMG',
   });
 });
 
