@@ -32,7 +32,7 @@ export function setupServer() {
     console.log(`Time: ${new Date().toLocaleString()}`);
     next();
   });
-  app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(swaggerDoc));
+  app.use('/api-docs', ...swaggerUI.serve, swaggerUI.setup(swaggerDoc));
   app.use('/auth', authRouter);
   app.use(contactsRouter);
   app.use(errorHandler);
