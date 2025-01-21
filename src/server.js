@@ -31,7 +31,14 @@ export function setupServer() {
     console.log(`Time: ${new Date().toLocaleString()}`);
     next();
   });
-  app.use('/api-docs', swaggerDocs());
+  app.use(
+    '/api-docs',
+    (req, res, next) => {
+      console.log('Swagger docs endpoint hit');
+      next();
+    },
+    swaggerDocs(),
+  );
   app.use('/auth', authRouter);
   app.use(contactsRouter);
   app.use(errorHandler);
