@@ -9,7 +9,8 @@ import { notFoundHandler } from './middlewares/notFoundHandler.js';
 import { errorHandler } from './middlewares/errorHandler.js';
 import authRouter from './routers/auth.js';
 import { UPLOAD_DIR } from './constants/index.js';
-import { swaggerDocs } from './middlewares/swaggerDocs.js';
+import { swaggerDoc } from './middlewares/swaggerDocs.js';
+import swaggerUI from 'swagger-ui-express';
 ////////////////////////////////////////////////////////////////////
 const PORT = Number(getEnvVar('PORT', '3000'));
 ////////////////////////////////////////////////////////////////////
@@ -31,14 +32,7 @@ export function setupServer() {
     console.log(`Time: ${new Date().toLocaleString()}`);
     next();
   });
-  app.use(
-    '/api-docs',
-    (req, res, next) => {
-      console.log('Swagger docs endpoint hit');
-      next();
-    },
-    swaggerDocs(),
-  );
+  app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(swaggerDoc));
   app.use('/auth', authRouter);
   app.use(contactsRouter);
   app.use(errorHandler);
