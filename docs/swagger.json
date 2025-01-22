@@ -522,29 +522,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "type": "object",
-                "required": [
-                  "name",
-                  "email",
-                  "password"
-                ],
-                "properties": {
-                  "name": {
-                    "description": "User name",
-                    "type": "string",
-                    "example": "Semen Bot"
-                  },
-                  "email": {
-                    "description": "User email",
-                    "type": "string",
-                    "example": "lol@gmail.com"
-                  },
-                  "password": {
-                    "description": "User password",
-                    "type": "string",
-                    "example": 12345
-                  }
-                }
+                "$ref": "#/components/schemas/user"
               }
             }
           }
@@ -839,6 +817,31 @@
             "description": "Link to contact photo",
             "type": "string",
             "example": "https://res.cloudinary.com/uqwgdu/image/upload/photo.png"
+          }
+        }
+      },
+      "user": {
+        "type": "object",
+        "required": [
+          "name",
+          "email",
+          "password"
+        ],
+        "properties": {
+          "name": {
+            "description": "User name",
+            "type": "string",
+            "example": "Semen Bot"
+          },
+          "email": {
+            "description": "User email",
+            "type": "string",
+            "example": "lol@gmail.com"
+          },
+          "password": {
+            "description": "User password",
+            "type": "string",
+            "example": 12345
           }
         }
       }
