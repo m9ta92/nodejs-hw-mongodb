@@ -43,6 +43,15 @@
         ],
         "parameters": [
           {
+            "in": "header",
+            "name": "Authorization",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Bearer token for authentication"
+          },
+          {
             "in": "query",
             "name": "page",
             "schema": {
@@ -183,6 +192,17 @@
             "bearerAuth": []
           }
         ],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Authorization",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Bearer token for authentication"
+          }
+        ],
         "requestBody": {
           "content": {
             "multipart/form-data": {
@@ -298,6 +318,15 @@
         ],
         "parameters": [
           {
+            "in": "header",
+            "name": "Authorization",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Bearer token for authentication"
+          },
+          {
             "in": "path",
             "name": "id",
             "required": true,
@@ -364,6 +393,15 @@
           }
         ],
         "parameters": [
+          {
+            "in": "header",
+            "name": "Authorization",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Bearer token for authentication"
+          },
           {
             "in": "path",
             "name": "id",
@@ -476,6 +514,15 @@
           }
         ],
         "parameters": [
+          {
+            "in": "header",
+            "name": "Authorization",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Bearer token for authentication"
+          },
           {
             "in": "path",
             "name": "id",
@@ -721,31 +768,17 @@
             "bearerAuth": []
           }
         ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "required": [
-                  "email",
-                  "password"
-                ],
-                "properties": {
-                  "email": {
-                    "description": "User email",
-                    "type": "string",
-                    "example": "lol@gmail.com"
-                  },
-                  "password": {
-                    "description": "User password",
-                    "type": "string",
-                    "example": 12345
-                  }
-                }
-              }
-            }
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Authorization",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Bearer token for authentication"
           }
-        },
+        ],
         "responses": {
           "204": {
             "description": "No Content"
