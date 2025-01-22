@@ -1,4 +1,4 @@
-description: BadRequestError
+description: Bad Request
 content:
   application/json:
     schema:
@@ -21,4 +21,4 @@ content:
           properties:
             message:
               type: string
-              example: '678e71d556e22de747850c4 is not valid id !'
+              example: 'Bad Request'

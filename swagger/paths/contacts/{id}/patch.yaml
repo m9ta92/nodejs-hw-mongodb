@@ -12,6 +12,36 @@ parameters:
     schema:
       type: string
       example: '65ca67e7ae7f10c88b598384'
+requestBody:
+  content:
+    multipart/form-data:
+      schema:
+        type: object
+        properties:
+          name:
+            description: "Contact name"
+            type: string
+            example: 'Semen Bot'
+          phoneNumber:
+            description: "Contact phone number"
+            type: number
+            example: +380000000000
+          email:
+            description: "Contact email"
+            type: string
+            example: lol@gmail.com
+          isFavourite:
+            description: "Contact is favourite"
+            type: boolean
+            example: false
+          contactType:
+            description: 'Contact type'
+            type: string
+            enum: ['work', 'home', 'personal']
+          photo:
+            description: "Contact photo"
+            type: string
+            format: binary
 responses:
   '200':
     description: 'Successfully patched a contact!'

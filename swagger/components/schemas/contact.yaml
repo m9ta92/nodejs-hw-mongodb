@@ -1,26 +1,24 @@
 type: object
 required:
-  - _id
   - name
   - phoneNumber
   - isFavourite
   - contactType
-  - userId
 properties:
   _id:
-    description: "Contact's id"
+    description: 'Backend-generated unique identifier.'
     type: string
     example: 65e4decdd286b30065d54ad1
   name:
-    description: "Contact's name"
+    description: "Contact name"
     type: string
     example: 'Semen Bot'
   phoneNumber:
-    description: "Contact's phone number"
+    description: "Contact phone number"
     type: number
     example: +380000000000
   email:
-    description: "Contact's email"
+    description: "Contact email"
     type: string
     example: lol@gmail.com
   isFavourite:
@@ -32,10 +30,10 @@ properties:
     type: string
     enum: ['work', 'home', 'personal']
   userId:
-    description: "Contact's user id"
+    description: "User id"
     type: string
     example: 65e4decdd286b30065d54ad1
   photo:
-    description: "Link to contact's photo"
+    description: "Link to contact photo"
     type: string
     example: https://res.cloudinary.com/uqwgdu/image/upload/photo.png
