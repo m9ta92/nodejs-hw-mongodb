@@ -14,7 +14,7 @@ properties:
   number:
     description: 'Contact phone number'
     type: number
-    example: +380000000000
+    example: 111-11-11
   userId:
     description: 'User id'
     type: string

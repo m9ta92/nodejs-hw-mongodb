@@ -12,34 +12,16 @@ requestBody:
         type: object
         required:
           - name
-          - phoneNumber
-          - isFavourite
-          - contactType
+          - number
         properties:
           name:
             description: 'Contact name'
             type: string
             example: 'Semen Bot'
-          phoneNumber:
+          number:
             description: 'Contact phone number'
             type: number
-            example: +380000000000
-          email:
-            description: 'Contact email'
-            type: string
-            example: lol@gmail.com
-          isFavourite:
-            description: 'Contact is favourite'
-            type: boolean
-            example: false
-          contactType:
-            description: 'Contact type'
-            type: string
-            enum: ['work', 'home', 'personal']
-          photo:
-            description: 'Contact photo'
-            type: string
-            format: binary
+            example: 111-11-11
 responses:
   '201':
     description: Creates a contact
