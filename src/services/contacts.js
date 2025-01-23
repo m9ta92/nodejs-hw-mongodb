@@ -32,7 +32,7 @@ export const getAllContacts = async ({
   //
   return {
     contacts,
-    ...paginationData,
+    // ...paginationData,
   };
 };
 ////////////////////////////////////////////////////////////////////
