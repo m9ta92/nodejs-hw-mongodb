@@ -745,9 +745,7 @@
         "type": "object",
         "required": [
           "name",
-          "phoneNumber",
-          "isFavourite",
-          "contactType"
+          "number"
         ],
         "properties": {
           "_id": {
@@ -760,39 +758,15 @@
             "type": "string",
             "example": "Semen Bot"
           },
-          "phoneNumber": {
+          "number": {
             "description": "Contact phone number",
             "type": "number",
             "example": 380000000000
-          },
-          "email": {
-            "description": "Contact email",
-            "type": "string",
-            "example": "lol@gmail.com"
-          },
-          "isFavourite": {
-            "description": "Contact's favourite",
-            "type": "boolean",
-            "example": false
-          },
-          "contactType": {
-            "description": "Contact type",
-            "type": "string",
-            "enum": [
-              "work",
-              "home",
-              "personal"
-            ]
           },
           "userId": {
             "description": "User id",
             "type": "string",
             "example": "65e4decdd286b30065d54ad1"
-          },
-          "photo": {
-            "description": "Link to contact photo",
-            "type": "string",
-            "example": "https://res.cloudinary.com/uqwgdu/image/upload/photo.png"
           }
         }
       },
