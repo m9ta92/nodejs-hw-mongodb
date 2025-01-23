@@ -40,7 +40,9 @@ export const signup = async (payload) => {
 ////////////////////////////////////////////////////////////////////
 export const login = async (payload) => {
   //
-  const user = await UsersCollection.findOne({ email: payload.email });
+  const user = await UsersCollection.findOne({
+    email: payload.email,
+  });
   if (!user) {
     throw createHttpError(401, 'Email not found !');
   }
@@ -57,6 +59,7 @@ export const login = async (payload) => {
   return await SessionsCollection.create({
     userId: user._id,
     ...sessionData,
+    name: user.name,
   });
 };
 ////////////////////////////////////////////////////////////////////
