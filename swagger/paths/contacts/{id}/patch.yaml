@@ -6,12 +6,6 @@ description: 'Update contact by id'
 security:
   - bearerAuth: []
 parameters:
-  - in: header
-    name: Authorization
-    required: true
-    schema:
-      type: string
-    description: Bearer token for authentication
   - in: path
     name: id
     required: true

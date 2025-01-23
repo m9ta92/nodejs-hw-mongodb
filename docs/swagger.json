@@ -43,15 +43,6 @@
         ],
         "parameters": [
           {
-            "in": "header",
-            "name": "Authorization",
-            "required": true,
-            "schema": {
-              "type": "string"
-            },
-            "description": "Bearer token for authentication"
-          },
-          {
             "in": "query",
             "name": "page",
             "schema": {
@@ -192,17 +183,6 @@
             "bearerAuth": []
           }
         ],
-        "parameters": [
-          {
-            "in": "header",
-            "name": "Authorization",
-            "required": true,
-            "schema": {
-              "type": "string"
-            },
-            "description": "Bearer token for authentication"
-          }
-        ],
         "requestBody": {
           "content": {
             "multipart/form-data": {
@@ -215,11 +195,6 @@
                   "contactType"
                 ],
                 "properties": {
-                  "_id": {
-                    "description": "Backend-generated unique identifier.",
-                    "type": "string",
-                    "example": "65ca67e7ae7f10c88b598384"
-                  },
                   "name": {
                     "description": "Contact name",
                     "type": "string",
@@ -248,11 +223,6 @@
                       "home",
                       "personal"
                     ]
-                  },
-                  "userId": {
-                    "description": "User id",
-                    "type": "string",
-                    "example": "65e4decdd286b30065d54ad1"
                   },
                   "photo": {
                     "description": "Contact photo",
@@ -317,15 +287,6 @@
           }
         ],
         "parameters": [
-          {
-            "in": "header",
-            "name": "Authorization",
-            "required": true,
-            "schema": {
-              "type": "string"
-            },
-            "description": "Bearer token for authentication"
-          },
           {
             "in": "path",
             "name": "id",
@@ -393,15 +354,6 @@
           }
         ],
         "parameters": [
-          {
-            "in": "header",
-            "name": "Authorization",
-            "required": true,
-            "schema": {
-              "type": "string"
-            },
-            "description": "Bearer token for authentication"
-          },
           {
             "in": "path",
             "name": "id",
@@ -514,15 +466,6 @@
           }
         ],
         "parameters": [
-          {
-            "in": "header",
-            "name": "Authorization",
-            "required": true,
-            "schema": {
-              "type": "string"
-            },
-            "description": "Bearer token for authentication"
-          },
           {
             "in": "path",
             "name": "id",

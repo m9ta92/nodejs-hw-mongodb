@@ -6,12 +6,6 @@ description: 'Get list of contacts'
 security:
   - bearerAuth: []
 parameters:
-  - in: header
-    name: Authorization
-    required: true
-    schema:
-      type: string
-    description: Bearer token for authentication
   - in: query
     name: page
     schema:
