@@ -3,9 +3,9 @@ import { Router } from 'express';
 import { ctrlWrapper } from '../utils/ctrlWrapper.js';
 import {
   loginUserSchema,
-  registerUserSchema,
   requestResetEmailSchema,
   resetPasswordSchema,
+  signupUserSchema,
 } from '../validation/auth.js';
 import {
   loginUserController,
@@ -20,8 +20,8 @@ import { validateBody } from '../middlewares/validateBody.js';
 const authRouter = Router();
 ////////////////////////////////////////////////////////////////////
 authRouter.post(
-  '/register',
-  validateBody(registerUserSchema),
+  '/signup',
+  validateBody(signupUserSchema),
   ctrlWrapper(registerUserController),
 );
 ////////////////////////////////////////////////////////////////////
@@ -33,7 +33,7 @@ authRouter.post(
 ////////////////////////////////////////////////////////////////////
 authRouter.post('/logout', ctrlWrapper(logoutUserController));
 ////////////////////////////////////////////////////////////////////
-authRouter.post('/refresh', ctrlWrapper(refreshUserSessionController));
+authRouter.post('/current', ctrlWrapper(refreshUserSessionController));
 ////////////////////////////////////////////////////////////////////
 authRouter.post(
   '/send-reset-email',

@@ -26,7 +26,7 @@ const createSession = () => {
   };
 };
 ////////////////////////////////////////////////////////////////////
-export const register = async (payload) => {
+export const signup = async (payload) => {
   //
   const user = await UsersCollection.findOne({ email: payload.email });
   if (user) {
@@ -60,7 +60,7 @@ export const login = async (payload) => {
   });
 };
 ////////////////////////////////////////////////////////////////////
-export const refresh = async ({ sessionId, refreshToken }) => {
+export const current = async ({ sessionId, refreshToken }) => {
   //
   const session = await SessionsCollection.findOne({
     _id: sessionId,

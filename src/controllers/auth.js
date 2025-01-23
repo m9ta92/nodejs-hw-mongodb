@@ -1,11 +1,11 @@
 ////////////////////////////////////////////////////////////////////
 import {
-  register,
   login,
   logout,
-  refresh,
   requestResetToken,
   resetPassword,
+  signup,
+  current,
 } from '../services/auth.js';
 import { THIRTY_DAYS } from '../constants/user.js';
 ////////////////////////////////////////////////////////////////////
@@ -24,7 +24,7 @@ const setupSession = (res, session) => {
 ////////////////////////////////////////////////////////////////////
 export const registerUserController = async (req, res) => {
   //
-  const user = await register(req.body);
+  const user = await signup(req.body);
   //
   res.status(201).json({
     status: 201,
@@ -53,7 +53,7 @@ export const loginUserController = async (req, res) => {
 ////////////////////////////////////////////////////////////////////
 export const refreshUserSessionController = async (req, res) => {
   //
-  const session = await refresh({
+  const session = await current({
     sessionId: req.cookies.sessionId,
     refreshToken: req.cookies.refreshToken,
   });

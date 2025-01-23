@@ -2,12 +2,12 @@
   "openapi": "3.1.0",
   "info": {
     "version": "1.0.0",
-    "title": "Contacts app",
+    "title": "Phonebook",
     "license": {
       "name": "Apache 2.0",
       "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "description": "This is a documentation of contacts app"
+    "description": "This is a documentation of Phonebook"
   },
   "servers": [
     {
@@ -495,7 +495,7 @@
         }
       }
     },
-    "/auth/register": {
+    "/users/signup": {
       "post": {
         "tags": [
           "Auth"
@@ -574,7 +574,7 @@
         }
       }
     },
-    "/auth/login": {
+    "/users/login": {
       "post": {
         "tags": [
           "Auth"
@@ -698,7 +698,7 @@
         }
       }
     },
-    "/auth/logout": {
+    "/users/logout": {
       "post": {
         "tags": [
           "Auth"
