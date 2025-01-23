@@ -58,8 +58,8 @@ export const login = async (payload) => {
   //
   return await SessionsCollection.create({
     userId: user._id,
-    ...sessionData,
     name: user.name,
+    ...sessionData,
   });
 };
 ////////////////////////////////////////////////////////////////////
