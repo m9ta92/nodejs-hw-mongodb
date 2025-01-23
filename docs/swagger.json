@@ -636,9 +636,15 @@
                     "data": {
                       "type": "object",
                       "required": [
+                        "name",
                         "accessToken"
                       ],
                       "properties": {
+                        "mame": {
+                          "description": "name",
+                          "type": "string",
+                          "example": "Semen Bot"
+                        },
                         "accessToken": {
                           "description": "accessToken",
                           "type": "string",
