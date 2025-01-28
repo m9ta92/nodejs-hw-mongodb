@@ -63,11 +63,10 @@ export const login = async (payload) => {
   });
 };
 ////////////////////////////////////////////////////////////////////
-export const current = async ({ sessionId, refreshToken }) => {
+export const current = async (payload) => {
   //
   const session = await SessionsCollection.findOne({
-    _id: sessionId,
-    refreshToken,
+    accessToken: payload.accessToken,
   });
   if (!session) {
     throw createHttpError(401, 'Session not found');
@@ -79,12 +78,13 @@ export const current = async ({ sessionId, refreshToken }) => {
     throw createHttpError(401, 'Session token expired');
   }
   //
-  await SessionsCollection.deleteOne({ _id: sessionId, refreshToken });
+  await SessionsCollection.deleteOne(session);
   //
   const newSession = createSession();
   //
   return await SessionsCollection.create({
     userId: session.userId,
+    name: session.name,
     ...newSession,
   });
 };
